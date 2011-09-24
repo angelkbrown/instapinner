@@ -1,0 +1,9 @@
+%div#image_container
+	- @images.each do |item|
+		%div.image.thumb{:onmouseover=>"imageHover(this);", :id=>"th-"+item.id}
+			%img{:src=>item.images.thumbnail.url}
+		%div.image.low_res{:onmouseout=>"imageHover(this);", :id=>"lr-"+item.id}
+			%img{:src=>item.images.low_resolution.url}
+%input#max_id{:hidden=>"hidden", :value=>"#{@next_max_id}"}
+%input#tag{:hidden=>"hidden", :value=>"#{@tag}"}
+

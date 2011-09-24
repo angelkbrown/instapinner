@@ -1,0 +1,56 @@
+<form action="http://pinterest.com/pin/create/bookmarklet/" id="bookmarklet_addpin_form" method="POST">
+
+            <div id="PinImageArea">
+                <div id="PinImageWrapper">
+                    <span class="priceFlag hidden"></span>
+                    
+                    <img alt="gdfs" src="http://images.instagram.com/media/2011/08/08/0e9d9a273f464ac491cdcc27f209bc8b_5.jpg">
+                    
+                    <input type="hidden" id="id_title" value="Pinstagram" name="title">
+                    <input type="hidden" id="id_media_url" value="http://images.instagram.com/media/2011/08/08/0e9d9a273f464ac491cdcc27f209bc8b_5.jpg" name="media_url">
+                    <input type="hidden" id="id_url" value="http://192.168.0.102:4567/search?term=beer" name="url">
+                    <div style="display:none"><input type="hidden" value="c4b692ed38105c6ddc0e8a976d721220" name="csrfmiddlewaretoken"></div>
+                    <p>http://192.168.0.102:4567/search?term=beer</p>
+                    
+                </div>
+            </div><!-- #PinImageArea -->
+            <div id="PinBoard">
+                <input type="hidden" value="1859162" id="id_board" name="board">
+                <div class="boardPickerOverlay"></div>
+                <div class="optionList boardPicker">
+                    
+                    <div class="current"><span class="currentName">creative tattoos<span class="currentDownArrow"></span></span></div>
+                    <div class="optionPanel"> 
+                        <ul>
+                        
+                        
+                            <li data="1859162">creative tattoos</li>
+                        
+                            <li data="928792">i want your skull</li>
+                        
+                            <li data="1510615">instagrams</li>
+                        
+                        
+                        </ul>
+                        <div class="createNewBoard">
+                            <input type="text" onblur="replaceDefaultValue('createNewBoard', 'Create New Board');" onfocus="removeDefaultValue('createNewBoard', 'Create New Board');" value="Create New Board"><a class="button lightButton" href="#">Create</a>
+                            <div class="inputstatus"></div>
+                        </div> <!-- .createNewBoard -->
+                    </div><!-- .optionPanel --> 
+                </div><!-- .optionList .boardPicker-->
+            </div> <!-- #PinBoard -->
+            <div id="PinInputArea">
+                <textarea name="caption" rows="2" class="bookmarklet expand ui-autocomplete-input" id="description" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">Describe your pin</textarea>
+                
+            </div><!-- #PinInputArea -->
+
+            <input type="hidden" name="tags" id="tag_holder" value="">
+            <input type="hidden" name="replies" id="peeps_holder">
+            <input type="hidden" name="buyable" id="currency_holder" value="">
+
+            <div id="PinButtons">
+	            <a class="button blueButton" id="pinit_button_button" href="#">Pin It</a>
+	            <input type="submit">            
+            </div><!-- #PinButtons -->
+
+        </form>

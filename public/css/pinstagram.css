@@ -1,0 +1,22 @@
+.thumb{
+	width:155px;
+	height:155px;
+}
+.image{
+	display:inline-block;
+	padding:5px;
+}
+#scroll{
+	position:absolute;
+	left: 100px;
+	top: 0px;
+	background-color:#ccc;
+	color:#333;
+	font-size:20px;
+}
+.low_res{
+	display:none;
+	z-index: 5000;
+	width:316px;
+	height:316px;	
+}
