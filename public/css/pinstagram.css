@@ -16,7 +16,14 @@
 }
 .low_res{
 	display:none;
+	position:fixed;
 	z-index: 5000;
-	width:316px;
-	height:316px;	
+	width:336px;
+	height:336px;	
+	padding:15px;
+	box-shadow: 3px 3px 3px #555;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	text-align: center;
 }
+.low_res img{margin:0 auto;}

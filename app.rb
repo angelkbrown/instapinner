@@ -54,3 +54,8 @@ get "/feed" do
   @images=client.user_recent_media
   haml :pin
 end
+
+get "/pin?" do
+	@src=params[:src]
+	haml :pinimage
+end

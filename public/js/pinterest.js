@@ -102,7 +102,7 @@ if(!document.tpmLjs){
 		}();
 		
 		if(m.length==0){
-			window.alert("Sorry, we can't see any big images or videos on this page.");
+			//window.alert("Sorry, we can't see any big images or videos on this page.");
 			document.tpmLjs=0
 		}else{
 			i=function(){
@@ -234,3 +234,4 @@ function(){b.style.display="none"},false)
 		}
 	}
 })();
+
