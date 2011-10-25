@@ -1,13 +1,10 @@
-var contentHeight = 900;  
+var contentHeight = 5000;  
 //var pageHeight = document.documentElement.clientHeight;  
 var scrollPosition;   
-window.onscroll = hideLowRes;
 $(document).ready(
 	function(){
 	    setInterval('scroll();', 250);
-	    $(".thumb").mouseenter(imageHover); 
-		//var box=$('.fancybox');
-		//box.fancybox({'scrolling':'auto','titleShow':false});	       
+	   // $(".pin_link").hover(function(){$("#"+$(this).attr("id")+" .pin_button").show();},function(){$("#"+$(this).attr("id")+" .pin_button").hide();});
 });
 
 function scroll(){
@@ -31,7 +28,7 @@ function loadMore(max_id,tag){
 	$(div).addClass("subcontainer");
 	$('#image_container').append($(div));	
 	$(div).load('/more?next_max_id='+max_id+'&tag='+tag);
-	contentHeight+=1030;
+	contentHeight+=7000;
 }
 
 function imageHover(){
@@ -67,8 +64,4 @@ function pinThis(img){
 
 function hideThis(elt){
 	$(elt).hide();
-}
-
-function hideLowRes(){
-	$(".low_res").hide();	
 }

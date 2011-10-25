@@ -5,13 +5,6 @@ require "instagram"
 require "haml"
 enable :sessions
 
-CALLBACK_URL = "http://192.168.0.102:4567/oauth/callback"
-
-Instagram.configure do |config|
-  config.client_id = "608edd598bd24939a5ea469cb9c2e34c"
-  config.client_secret = "757673aa3bcb45a5a7e1bbb3ff693a3b"
-end
-
 get "/" do
 	haml :search
 end
@@ -34,28 +27,10 @@ get "/more?" do
 	@result= Instagram.tag_recent_media(@tag,@options)	
 	@images=@result[:data]
 	@next_max_id=@result[:pagination][:next_max_id]	
-	haml :images, :layout => (request.xhr? ? false : :layout)
+	haml :pin, :layout => (request.xhr? ? false : :layout)
 end
 
-get "/oauth/connect" do
-  redirect Instagram.authorize_url(:redirect_uri => CALLBACK_URL)
-end
-
-get "/oauth/callback" do
-  response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
-  session[:access_token] = response.access_token
-  redirect "/feed"
-end
-
-get "/feed" do
-  client = Instagram.client(:access_token => session[:access_token])
-  user = client.user
-
-  @images=client.user_recent_media
-  haml :pin
-end
-
-get "/pin?" do
-	@src=params[:src]
-	haml :pinimage
-end
+#get "/pin?" do
+#	@src=params[:src]
+#	haml :pin
+#end

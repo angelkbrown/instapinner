@@ -15,15 +15,15 @@
 	font-size:20px;
 }
 .low_res{
-	display:none;
-	position:fixed;
-	z-index: 5000;
+	float: left;
 	width:336px;
-	height:336px;	
+	height:310px;	
 	padding:15px;
-	box-shadow: 3px 3px 3px #555;
+	box-shadow: 3px 3px 7px #555;
 	border: 1px solid #ccc;
 	background-color: #fff;
 	text-align: center;
+	margin:10px;
 }
-.low_res img{margin:0 auto;}
+.img{width:336px;height:306px;}
+.pin_button{position:absolute;display:none;z-index:1;}
