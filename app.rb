@@ -6,8 +6,8 @@ require "haml"
 enable :sessions
 
 Instagram.configure do |config|
-  config.client_id = "608edd598bd24939a5ea469cb9c2e34c"
-  config.client_secret = "757673aa3bcb45a5a7e1bbb3ff693a3b"
+  config.client_id = TODO_CONFIG_ID
+  config.client_secret = TODO_CLIENT_SECRET
 end
 
 get "/?" do
