@@ -1,12 +1,11 @@
-%div#image_container
-	- @images.each do |item|
-		%div.image.low_res{:id=>"lr-"+item.id}
-			%div			
-				%div.pin_link{:id=>"img_"+item.id, :onmouseover=>"$('#'+$(this).attr('id')+' .pin_button').show()", :onmouseout=>"$('#'+$(this).attr('id')+' .pin_button').hide()"}
-					%div.img.pin_button
-						%a{:target=>"_blank", :href=>"http://pinterest.com/pin/create/button/?url=http%3A%2F%2Flocalhost%3A4567%2Fsearch&media=#{item.images.low_resolution.url}&description=a%20cool%20image%20from%20pinstagram"}
-							%img{:src=>"../img/overlay.png", :alt=>"Pin This"}					
-					%div.img.inst
-						%img{:src=>item.images.low_resolution.url}				
+- @images.each do |item|
+	%div.image.low_res{:id=>"lr-"+item.id}
+		%div			
+			%div.pin_link{:id=>"img_"+item.id, :onmouseover=>"$('#'+$(this).attr('id')+' .pin_button').show()", :onmouseout=>"$('#'+$(this).attr('id')+' .pin_button').hide()"}
+				%div.img.pin_button
+					%a{:target=>"_blank", :href=>"http://pinterest.com/pin/create/button/?url=http%3A%2F%2Flocalhost%3A4567%2Fsearch&media=#{item.images.low_resolution.url}&description=a%20cool%20image%20from%20pinstagram"}
+						%img{:src=>"../img/overlay.png", :alt=>"Pin This"}					
+				%div.img.inst
+					%img{:src=>item.images.low_resolution.url, :alt=>item.caption.text.gsub("#","")}				
 %input#max_id{:hidden=>"hidden", :value=>"#{@next_max_id}"}
 %input#tag{:hidden=>"hidden", :value=>"#{@tag}"}

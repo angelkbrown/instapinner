@@ -4,7 +4,6 @@ var scrollPosition;
 $(document).ready(
 	function(){
 	    setInterval('scroll();', 250);
-	   // $(".pin_link").hover(function(){$("#"+$(this).attr("id")+" .pin_button").show();},function(){$("#"+$(this).attr("id")+" .pin_button").hide();});
 });
 
 function scroll(){
@@ -13,7 +12,7 @@ function scroll(){
     else  
         scrollPosition = window.pageYOffset;          
   
-    if((contentHeight - scrollPosition) < 50){ 
+    if((contentHeight - scrollPosition) < 500){ 
     	//$("#scroll").text("contentHeight: "+contentHeight+" scrollPosition: "+scrollPosition);
     	var id=$("#max_id").val();
     	var tag=$("#tag").val();
@@ -27,41 +26,6 @@ function loadMore(max_id,tag){
 	var div = document.createElement("div");
 	$(div).addClass("subcontainer");
 	$('#image_container').append($(div));	
-	$(div).load('/more?next_max_id='+max_id+'&tag='+tag);
+	$(div).load('/?next_max_id='+max_id+'&term='+tag);
 	contentHeight+=7000;
-}
-
-function imageHover(){
-	var thumb=$("#th-"+$(this).attr("id").split("-")[1]);
-	var low_res=$("#lr-"+$(this).attr("id").split("-")[1]);
-	
-	if(low_res.is(":visible")){
-		low_res.hide();
-	}else{
-		var position=thumb.offset();	
-		$(".low_res").hide();			
-		low_res.show(300);
-		var set={
-			"top":position.top,
-			"left":position.left
-		};
-		low_res.offset(set);	
-	}
-}
-
-function pinThis(img){
-	$.get("/pin?src="+$(img).attr("src"));
-	/*$.ajax({
-			type		: "GET",
-			cache	: false,
-			url		: "/pin?src="+$(img).attr("src"),
-			data		: $(this).serializeArray(),
-			success: function(data) {
-				$.fancybox(data);
-			}
-		});	*/
-}
-
-function hideThis(elt){
-	$(elt).hide();
 }
